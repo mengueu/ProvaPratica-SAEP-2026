@@ -1,0 +1,219 @@
+:root {
+    --fundo: #f3f5f7;
+    --cartao: #ffffff;
+    --texto: #1f2933;
+    --suave: #5b6772;
+    --borda: #d5dbe1;
+    --primaria: #1f4e79;
+    --primaria-escura: #173b5c;
+    --ok: #1d7a46;
+    --ok-fundo: #e3f4ea;
+    --alerta: #9a5b00;
+    --alerta-fundo: #fff1d6;
+    --erro: #a12626;
+    --erro-fundo: #fbe4e4;
+    --raio: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+h2 { font-size: 1.1rem; margin: 0 0 .9rem; }
+.sub { margin: 0 0 1.2rem; color: var(--suave); }
+
+.topo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem 1.5rem;
+    padding: .7rem 1.5rem;
+    background: var(--primaria);
+    color: #fff;
+}
+.topo a { color: #fff; text-decoration: none; }
+.marca { font-weight: 700; font-size: 1.05rem; }
+.menu { display: flex; gap: 1rem; flex: 1; }
+.menu a { opacity: .85; }
+.menu a:hover { opacity: 1; text-decoration: underline; }
+.usuario { display: flex; align-items: center; gap: .9rem; }
+.sair {
+    font: inherit;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: var(--raio);
+    padding: .2rem .7rem;
+    cursor: pointer;
+}
+.sair:hover { background: rgba(255, 255, 255, .15); }
+
+.conteudo { max-width: 1180px; margin: 0 auto; padding: 1.5rem; }
+
+.painel {
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+.barra-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: 1rem;
+}
+.barra-titulo h1, .barra-titulo h2 { margin: 0; }
+
+.atalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.atalho {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--primaria);
+    border-radius: var(--raio);
+    color: inherit;
+    text-decoration: none;
+}
+.atalho:hover { background: #f7fafc; }
+.atalho strong { color: var(--primaria); font-size: 1.05rem; }
+.atalho span { color: var(--suave); }
+
+.login-card {
+    max-width: 380px;
+    margin: 8vh auto 0;
+    padding: 1.75rem;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+.login-card .btn { width: 100%; margin-top: 1.1rem; }
+
+label, .rotulo {
+    display: block;
+    font-weight: 600;
+    font-size: .9rem;
+    margin: .6rem 0 .25rem;
+}
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0 1rem;
+}
+.campo.largo { grid-column: 1 / -1; }
+
+input[type="text"], input[type="password"], input[type="search"],
+input[type="number"], input[type="email"], input[type="date"],
+input[type="datetime-local"], select {
+    width: 100%;
+    padding: .5rem .65rem;
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+input:focus, select:focus, .btn:focus-visible {
+    outline: 2px solid var(--primaria);
+    outline-offset: 1px;
+}
+.opcoes { display: flex; gap: 1.25rem; padding: .45rem 0; }
+.opcoes label { display: inline-flex; align-items: center; gap: .35rem; margin: 0; font-weight: 400; }
+.acoes { display: flex; gap: .6rem; margin-top: 1.1rem; }
+
+.busca { display: flex; flex-wrap: wrap; gap: .5rem; flex: 1; max-width: 560px; }
+.busca input { flex: 1; min-width: 220px; }
+
+.btn {
+    display: inline-block;
+    padding: .5rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primaria);
+    background: #fff;
+    border: 1px solid var(--primaria);
+    border-radius: var(--raio);
+    cursor: pointer;
+}
+.btn:hover { background: #eef4f9; }
+.btn-primario { color: #fff; background: var(--primaria); }
+.btn-primario:hover { background: var(--primaria-escura); }
+.btn-pequeno { padding: .25rem .65rem; font-size: .85rem; }
+.btn-perigo { color: var(--erro); border-color: var(--erro); }
+.btn-perigo:hover { background: var(--erro-fundo); }
+
+.aviso {
+    padding: .75rem 1rem;
+    margin-bottom: 1.1rem;
+    border: 1px solid;
+    border-radius: var(--raio);
+    white-space: pre-line; 
+}
+.aviso-sucesso { color: var(--ok); background: var(--ok-fundo); border-color: #b7dfc7; }
+.aviso-erro { color: var(--erro); background: var(--erro-fundo); border-color: #efbcbc; }
+.aviso-alerta { color: var(--alerta); background: var(--alerta-fundo); border-color: #f0d49b; font-weight: 600; }
+
+.rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: .5rem .6rem; text-align: left; border-bottom: 1px solid var(--borda); }
+th {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: var(--suave);
+    background: #f8fafb;
+    white-space: nowrap;
+}
+.num { text-align: right; }
+.tabela-produtos th:nth-child(2), .tabela-produtos td:nth-child(2) { min-width: 260px; }
+.acoes-linha { white-space: nowrap; }
+
+.selo {
+    display: inline-block;
+    min-width: 2rem;
+    padding: .1rem .55rem;
+    border-radius: 999px;
+    font-size: .82rem;
+    font-weight: 600;
+    text-align: center;
+}
+.selo-ok { color: var(--ok); background: var(--ok-fundo); }
+.selo-alerta { color: var(--alerta); background: var(--alerta-fundo); }
+.selo-neutro { color: var(--primaria); background: #e4eef7; }
+
+@media (max-width: 640px) {
+    .conteudo { padding: 1rem; }
+    .menu { order: 3; flex-basis: 100%; }
+}
+
+.selo-erro { color: var(--erro); background: var(--erro-fundo); }
+.suave { color: var(--suave); }
+.tabela-agendamentos td { vertical-align: top; }
+.tabela-agendamentos th:nth-child(5), .tabela-agendamentos td:nth-child(5) { min-width: 240px; }
+.linha-dia td {
+    padding: .45rem .6rem;
+    font-weight: 700;
+    color: var(--primaria);
+    text-transform: capitalize;
+    background: #e4eef7;
+}
+.busca select { width: auto; }
+.busca input[type="date"] { width: auto; flex: 0 0 auto; min-width: 0; }

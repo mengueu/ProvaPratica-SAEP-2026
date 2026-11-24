@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsáveis – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <div class="barra-titulo">
+            <h1>Responsáveis</h1>
+            <a class="btn" href="principal.html">&larr; Voltar à tela principal</a>
+        </div>
+
+        <section class="painel">
+            <h2 id="titulo-formulario">Novo responsável</h2>
+
+            <form id="form-responsavel">
+                <input type="hidden" id="id_responsavel">
+
+                <div class="grade">
+                    <div class="campo largo">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" maxlength="100" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" maxlength="14" required placeholder="000.000.000-00">
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone *</label>
+                        <input type="text" id="telefone" maxlength="20" required placeholder="(11) 98888-7777">
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" maxlength="100" required>
+                    </div>
+                    <div class="campo largo">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" maxlength="200">
+                    </div>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" id="botao-salvar" class="btn btn-primario">Cadastrar responsável</button>
+                    <button type="button" id="botao-cancelar" class="btn" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="barra-titulo">
+                <h2>Responsáveis cadastrados (<span id="total">0</span>)</h2>
+
+                <form id="form-busca" class="busca">
+                    <input type="search" id="busca" placeholder="Buscar por nome, CPF, telefone ou e-mail">
+                    <button type="submit" class="btn">Buscar</button>
+                    <button type="button" id="botao-limpar-busca" class="btn">Limpar</button>
+                </form>
+            </div>
+
+            <div class="rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nome</th><th>CPF</th><th>Telefone</th>
+                            <th>E-mail</th><th>Endereço</th><th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-responsaveis"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/responsaveis.js"></script>
+</body>
+</html>

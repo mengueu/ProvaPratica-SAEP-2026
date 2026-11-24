@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agendamentos – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <div class="barra-titulo">
+            <h1>Agendamentos</h1>
+            <a class="btn" href="principal.html">&larr; Voltar à tela principal</a>
+        </div>
+
+        <section class="painel">
+            <h2 id="titulo-formulario">Novo agendamento</h2>
+
+            <form id="form-agendamento">
+                <input type="hidden" id="id_agendamento">
+
+                <div class="grade">
+                    <div class="campo largo">
+                        <label for="id_paciente">Paciente *</label>
+                        <select id="id_paciente" required>
+                            <option value="">Selecione o paciente</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="data_hora">Data e horário *</label>
+                        <input type="datetime-local" id="data_hora" required>
+                    </div>
+                    <div class="campo">
+                        <label for="procedimento">Procedimento *</label>
+                        <input type="text" id="procedimento" maxlength="100" required placeholder="Ex.: Limpeza, Restauração">
+                    </div>
+                    <div class="campo">
+                        <label for="status">Status *</label>
+                        <select id="status" required>
+                            <option value="agendado">Agendado</option>
+                            <option value="concluido">Concluído</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                    <div class="campo largo">
+                        <label for="observacoes">Observações</label>
+                        <input type="text" id="observacoes" maxlength="255">
+                    </div>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" id="botao-salvar" class="btn btn-primario">Cadastrar agendamento</button>
+                    <button type="button" id="botao-cancelar" class="btn" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="barra-titulo">
+                <h2>Agendamentos (<span id="total">0</span>)</h2>
+
+                <form id="form-busca" class="busca">
+                    <input type="search" id="busca" placeholder="Buscar por paciente, responsável, CPF ou procedimento">
+                    <input type="date" id="filtro-dia" title="Filtrar por dia">
+                    <select id="filtro-status" title="Filtrar por status">
+                        <option value="">Todos os status</option>
+                        <option value="agendado">Agendado</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                    <button type="submit" class="btn">Buscar</button>
+                    <button type="button" id="botao-limpar-busca" class="btn">Limpar</button>
+                </form>
+            </div>
+
+            <div class="rolagem">
+                <table class="tabela-agendamentos">
+                    <thead>
+                        <tr>
+                            <th>Horário</th><th>Status</th><th>Procedimento</th>
+                            <th>Paciente</th><th>Responsável</th><th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-agendamentos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/agendamentos.js"></script>
+</body>
+</html>

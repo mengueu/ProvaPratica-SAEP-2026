@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Início – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <h1 id="saudacao"></h1>
+        <p class="sub">Escolha uma das áreas do sistema.</p>
+
+        <div class="atalhos">
+            <a class="atalho" href="agendamentos.html">
+                <strong>Agendamentos</strong>
+                <span>Consultas marcadas, por dia e horário</span>
+            </a>
+            <a class="atalho" href="pacientes.html">
+                <strong>Pacientes</strong>
+                <span>Cadastro de pacientes e seus responsáveis</span>
+            </a>
+            <a class="atalho" href="responsaveis.html">
+                <strong>Responsáveis</strong>
+                <span>Cadastro dos responsáveis pelos pacientes</span>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/principal.js"></script>
+</body>
+</html>

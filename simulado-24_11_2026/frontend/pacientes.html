@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pacientes – Clínica Odontológica</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Odontológica</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="responsaveis.html">Responsáveis</a>
+            <a href="pacientes.html">Pacientes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <div class="barra-titulo">
+            <h1>Pacientes</h1>
+            <a class="btn" href="principal.html">&larr; Voltar à tela principal</a>
+        </div>
+
+        <section class="painel">
+            <h2 id="titulo-formulario">Novo paciente</h2>
+
+            <form id="form-paciente">
+                <input type="hidden" id="id_paciente">
+
+                <div class="grade">
+                    <div class="campo largo">
+                        <label for="nome">Nome *</label>
+                        <input type="text" id="nome" maxlength="100" required>
+                    </div>
+                    <div class="campo">
+                        <label for="data_nascimento">Data de nascimento *</label>
+                        <input type="date" id="data_nascimento" required>
+                    </div>
+                    <div class="campo">
+                        <label for="id_responsavel">Responsável *</label>
+                        <select id="id_responsavel" required>
+                            <option value="">Selecione o responsável</option>
+                        </select>
+                    </div>
+                    <div class="campo largo">
+                        <label for="observacoes">Observações</label>
+                        <input type="text" id="observacoes" maxlength="255" placeholder="Alergias, cuidados especiais, etc.">
+                    </div>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" id="botao-salvar" class="btn btn-primario">Cadastrar paciente</button>
+                    <button type="button" id="botao-cancelar" class="btn" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="barra-titulo">
+                <h2>Pacientes cadastrados (<span id="total">0</span>)</h2>
+
+                <form id="form-busca" class="busca">
+                    <input type="search" id="busca" placeholder="Buscar por paciente, responsável ou observação">
+                    <button type="submit" class="btn">Buscar</button>
+                    <button type="button" id="botao-limpar-busca" class="btn">Limpar</button>
+                </form>
+            </div>
+
+            <div class="rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nome</th><th>Nascimento</th><th>Idade</th>
+                            <th>Observações</th><th>Responsável</th><th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-pacientes"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/pacientes.js"></script>
+</body>
+</html>
