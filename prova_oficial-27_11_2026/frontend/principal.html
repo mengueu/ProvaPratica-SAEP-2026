@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Início – Clínica Veterinária</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a class="marca" href="principal.html">Clínica Veterinária</a>
+        <nav class="menu">
+            <a href="principal.html">Início</a>
+            <a href="tutores.html">Tutores</a>
+            <a href="pets.html">Pets</a>
+            <a href="agendamentos.html">Agendamentos</a>
+        </nav>
+        <div class="usuario">
+            <span>Usuário: <strong id="nome-usuario"></strong></span>
+            <button id="botao-sair" class="sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="mensagem" class="aviso" hidden></div>
+
+        <h1 id="saudacao"></h1>
+        <p class="sub">Escolha uma das áreas do sistema.</p>
+
+        <div class="atalhos">
+            <a class="atalho" href="tutores.html">
+                <strong>Tutores</strong>
+                <span>Cadastro de tutores e seus pets</span>
+            </a>
+            <a class="atalho" href="pets.html">
+                <strong>Pets</strong>
+                <span>Cadastro de pets e seus tutores</span>
+            </a>
+            <a class="atalho" href="agendamentos.html">
+                <strong>Agendamentos</strong>
+                <span>Consultas marcadas, por dia e horário</span>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/comum.js"></script>
+    <script src="js/principal.js"></script>
+</body>
+</html>
